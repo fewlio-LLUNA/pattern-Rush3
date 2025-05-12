@@ -36,6 +36,7 @@ public class NoteSpawner : MonoBehaviour
             if (mover != null)
             {
                 mover.speed = noteSpeed;
+                mover.laneIndex = lane;
             }
 
             index++;
@@ -52,6 +53,7 @@ public class NoteSpawner : MonoBehaviour
             if (mover != null)
             {
                 mover.speed = noteSpeed;
+                mover.laneIndex = lane;
             }
 
             yield return new WaitForSeconds(interval);
