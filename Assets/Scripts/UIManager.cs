@@ -5,29 +5,25 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI perfectText, greatText, goodText, missText;
-    public TextMeshProUGUI judgementText;
-
-    private int perfectCount = 0, greatCount = 0, goodCount = 0, missCount = 0;
+    public TextMeshProUGUI judgementText, comboText;
 
     public void DisplayJudgement(string result)
     {
+        ScoreManager.Instance.AddJudgement(result);
+
         switch (result)
         {
             case "Perfect":
-                perfectCount++;
-                perfectText.text = "Perfect: " + perfectCount;
+                perfectText.text = ScoreManager.Instance.GetPerfect().ToString();
                 break;
             case "Great":
-                greatCount++;
-                greatText.text = "Great: " + greatCount;
+                greatText.text = ScoreManager.Instance.GetGreat().ToString();
                 break;
             case "Good":
-                goodCount++;
-                goodText.text = "Good: " + goodCount;
+                goodText.text =  ScoreManager.Instance.GetGood().ToString();
                 break;
             case "Miss":
-                missCount++;
-                missText.text = "Miss: " + missCount;
+                missText.text =  ScoreManager.Instance.GetMiss().ToString();
                 break;
         }
 
@@ -39,7 +35,13 @@ public class UIManager : MonoBehaviour
     {
         judgementText.text = result;
         judgementText.gameObject.SetActive(true);
+
+        comboText.text = ScoreManager.Instance.GetMaxCombo().ToString();
+        comboText.gameObject.SetActive(true);
+
         yield return new WaitForSeconds(0.5f);
+
         judgementText.gameObject.SetActive(false);
+        comboText.gameObject.SetActive(false);
     }
 }
