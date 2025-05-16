@@ -32,7 +32,7 @@ public class ScoreManager : MonoBehaviour
                 break;
             case "Miss":
                 missCount++;
-                currentCombo = 0;
+                currentCombo = 0;  // コンボリセット
                 break;
         }
 
@@ -45,7 +45,6 @@ public class ScoreManager : MonoBehaviour
     public void CalculateFinalScore()
     {
         int totalNotes = perfectCount + greatCount + goodCount + missCount;
-
         if (totalNotes == 0) return;
 
         int great = 10_000_000 / totalNotes;
@@ -66,6 +65,7 @@ public class ScoreManager : MonoBehaviour
 
     public int GetScore() => totalScore;
     public int GetMaxCombo() => maxCombo;
+    public int GetCurrentCombo() => currentCombo;  // ←追加
 
     public int GetPerfect() => perfectCount;
     public int GetGreat() => greatCount;

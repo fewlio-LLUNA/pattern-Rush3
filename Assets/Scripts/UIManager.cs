@@ -20,10 +20,10 @@ public class UIManager : MonoBehaviour
                 greatText.text = ScoreManager.Instance.GetGreat().ToString();
                 break;
             case "Good":
-                goodText.text =  ScoreManager.Instance.GetGood().ToString();
+                goodText.text = ScoreManager.Instance.GetGood().ToString();
                 break;
             case "Miss":
-                missText.text =  ScoreManager.Instance.GetMiss().ToString();
+                missText.text = ScoreManager.Instance.GetMiss().ToString();
                 break;
         }
 
@@ -36,12 +36,21 @@ public class UIManager : MonoBehaviour
         judgementText.text = result;
         judgementText.gameObject.SetActive(true);
 
-        comboText.text = ScoreManager.Instance.GetMaxCombo().ToString();
-        comboText.gameObject.SetActive(true);
+        int currentCombo = ScoreManager.Instance.GetCurrentCombo();
+        if (currentCombo > 0)
+        {
+            comboText.text = currentCombo.ToString();
+            comboText.gameObject.SetActive(true);
+        }
+        else
+        {
+            comboText.gameObject.SetActive(false);
+        }
 
         yield return new WaitForSeconds(0.5f);
 
         judgementText.gameObject.SetActive(false);
         comboText.gameObject.SetActive(false);
     }
+
 }

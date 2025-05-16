@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  laneIndex: 0
 --- !u!61 &6074831951238344885
 BoxCollider2D:
   m_ObjectHideFlags: 0
