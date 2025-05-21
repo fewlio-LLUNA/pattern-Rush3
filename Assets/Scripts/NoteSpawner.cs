@@ -48,8 +48,8 @@ public class NoteSpawner : MonoBehaviour
                 mover.laneIndex = lane;
             }
 
-            // 4拍ごとにBarLine（＝1拍＝16分音符×4）
-            if (beatCount % 4 == 0)
+            // 1小節毎にBarLine
+            if (beatCount % 16 == 0)
             {
                 GameObject barLine = Instantiate(barLinePrefab, barLineSpawnPoint.position, Quaternion.identity);
 
