@@ -15,9 +15,18 @@ public class DestroyLine : MonoBehaviour
     {
         if (other.CompareTag("Note"))
         {
+            NoteMover mover = other.GetComponent<NoteMover>();
+            if (mover != null && mover.wasJudged)
+            {
+                // すでに叩かれていたらスキップ
+                return;
+            }
+
+            mover.wasJudged = true;
+
             Destroy(other.gameObject);
-            scoreManager.AddJudgement("Miss"); // ← Miss数カウントとコンボリセット
-            uiManager.DisplayJudgement("Miss"); // ← UI表示（変更なし）
+            scoreManager.AddJudgement("Miss");
+            uiManager.DisplayJudgement("Miss");
         }
     }
 }

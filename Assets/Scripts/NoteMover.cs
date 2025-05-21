@@ -4,6 +4,7 @@ public class NoteMover : MonoBehaviour
 {
     public float speed = 10f;
     public int laneIndex;
+    public bool wasJudged = false;
 
     void Update()
     {

@@ -32,7 +32,7 @@ public class NoteJudge : MonoBehaviour
         foreach (GameObject note in notes)
         {
             NoteMover mover = note.GetComponent<NoteMover>();
-            if (mover.laneIndex != laneIndex) continue;
+            if (mover.laneIndex != laneIndex || mover.wasJudged) continue; // 既に判定済ならスキップ
 
             noteExistsInLane = true;
 
@@ -58,6 +58,8 @@ public class NoteJudge : MonoBehaviour
             else
                 result = "Miss";
 
+            bestCandidate.GetComponent<NoteMover>().wasJudged = true;
+
             Destroy(bestCandidate);
 
             // 先にスコアカウントを更新する
@@ -66,10 +68,23 @@ public class NoteJudge : MonoBehaviour
         }
         else if (noteExistsInLane)
         {
-            // 判定圏内ノーツなし、Miss判定
-            scoreManager.AddJudgement("Miss"); // 先にカウント
-            uiManager.DisplayJudgement("Miss");
+            foreach (GameObject note in notes)
+            {
+                NoteMover mover = note.GetComponent<NoteMover>();
+                if (mover.laneIndex == laneIndex && !mover.wasJudged)
+                {
+                    float yDiff = Mathf.Abs(note.transform.position.y - judgeLine.position.y);
+                    float timeDiff = yDiff / mover.speed;
+
+                    if (timeDiff >= judgeThresholds[3])
+                    {
+                        mover.wasJudged = true; // ← Miss判定であっても「判定済み」にすることが重要
+                        scoreManager.AddJudgement("Miss");
+                        uiManager.DisplayJudgement("Miss");
+                        return;
+                    }
+                }
+            }
         }
-        // ノーツ自体がなければ何もしない
     }
 }
