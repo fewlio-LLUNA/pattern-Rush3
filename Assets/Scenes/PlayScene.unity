@@ -384,7 +384,7 @@ MonoBehaviour:
   barLinePrefab: {fileID: 4079667523196802051, guid: 9afa49e41672b014cb2e688243c21ed3, type: 3}
   barLineSpawnPoint: {fileID: 1555442087}
   bpm: 120
-  noteSpeed: 20
+  noteSpeed: 18
 --- !u!4 &305988903
 Transform:
   m_ObjectHideFlags: 0
