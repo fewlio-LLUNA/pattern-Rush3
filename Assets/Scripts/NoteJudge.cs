@@ -59,14 +59,16 @@ public class NoteJudge : MonoBehaviour
                 result = "Miss";
 
             Destroy(bestCandidate);
-            uiManager.DisplayJudgement(result);
+
+            // 先にスコアカウントを更新する
             scoreManager.AddJudgement(result);
+            uiManager.DisplayJudgement(result);
         }
         else if (noteExistsInLane)
         {
             // 判定圏内ノーツなし、Miss判定
+            scoreManager.AddJudgement("Miss"); // 先にカウント
             uiManager.DisplayJudgement("Miss");
-            scoreManager.AddJudgement("Miss");
         }
         // ノーツ自体がなければ何もしない
     }
