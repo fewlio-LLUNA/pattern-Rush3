@@ -81,6 +81,7 @@ public class NoteJudge : MonoBehaviour
                         mover.wasJudged = true; // ← Miss判定であっても「判定済み」にすることが重要
                         scoreManager.AddJudgement("Miss");
                         uiManager.DisplayJudgement("Miss");
+                        Destroy(note);
                         return;
                     }
                 }

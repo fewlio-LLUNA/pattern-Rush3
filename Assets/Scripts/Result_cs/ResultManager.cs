@@ -1,38 +1,33 @@
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResultManager : MonoBehaviour
 {
-    public TextMeshProUGUI musicNameText;
+    public TextMeshProUGUI patternTitleText;
     public TextMeshProUGUI bpmText;
-
+    public TextMeshProUGUI scoreText;
     public TextMeshProUGUI perfectText;
     public TextMeshProUGUI greatText;
     public TextMeshProUGUI goodText;
     public TextMeshProUGUI missText;
-
     public TextMeshProUGUI maxComboText;
-    public TextMeshProUGUI scoreText;
 
-    void Start()
+    public void Start()
     {
-        // データ取得
-        ResultData data = ResultData.Instance;
-
-        musicNameText.text = "譜面名：螺旋階段";
-        bpmText.text = "BPM：" + data.bpm;
-
-        perfectText.text = data.perfectCount.ToString();
-        greatText.text = data.greatCount.ToString();
-        goodText.text = data.goodCount.ToString();
-        missText.text = data.missCount.ToString();
-        maxComboText.text = data.maxCombo.ToString();
-        scoreText.text = data.score.ToString("N0");
+        // データをUIに反映
+        patternTitleText.text = ResultData.patternName;
+        bpmText.text = ResultData.bpm.ToString("F1");
+        scoreText.text = ResultData.score.ToString("N0");
+        perfectText.text = ResultData.perfectCount.ToString();
+        greatText.text = ResultData.greatCount.ToString();
+        goodText.text = ResultData.goodCount.ToString();
+        missText.text = ResultData.missCount.ToString();
+        maxComboText.text = ResultData.maxCombo.ToString();
     }
 
-    public void OnClickRetry()
+    public void OnRetryButtonPressed()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("PlayScene");
+        SceneManager.LoadScene("PlayScene");
     }
 }

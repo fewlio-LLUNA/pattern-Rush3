@@ -3,7 +3,6 @@ using UnityEngine;
 public class DestroyLine : MonoBehaviour
 {
     public UIManager uiManager;
-
     private ScoreManager scoreManager;
 
     private void Start()
@@ -13,20 +12,31 @@ public class DestroyLine : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // ノーツ処理
         if (other.CompareTag("Note"))
         {
             NoteMover mover = other.GetComponent<NoteMover>();
-            if (mover != null && mover.wasJudged)
+            if (mover != null)
             {
-                // すでに叩かれていたらスキップ
-                return;
+                if (mover.wasJudged)
+                {
+                    // すでに判定されていたらスキップ
+                    return;
+                }
+
+                mover.wasJudged = true;
+                scoreManager.AddJudgement("Miss");
+                uiManager.DisplayJudgement("Miss");
             }
 
-            mover.wasJudged = true;
-
             Destroy(other.gameObject);
-            scoreManager.AddJudgement("Miss");
-            uiManager.DisplayJudgement("Miss");
+            return;
+        }
+
+        // 小節線（BarLine）もDestroy
+        if (other.CompareTag("BarLine"))
+        {
+            Destroy(other.gameObject);
         }
     }
 }

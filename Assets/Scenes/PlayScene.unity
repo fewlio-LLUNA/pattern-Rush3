@@ -383,6 +383,7 @@ MonoBehaviour:
   - {fileID: 1944709892}
   barLinePrefab: {fileID: 4079667523196802051, guid: 9afa49e41672b014cb2e688243c21ed3, type: 3}
   barLineSpawnPoint: {fileID: 1555442087}
+  patternName: "\u87BA\u65CB\u968E\u6BB5"
   bpm: 120
   noteSpeed: 18
 --- !u!4 &305988903
@@ -1227,7 +1228,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &996102845
 MonoBehaviour:
@@ -1519,6 +1520,51 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.100284, y: 3.040086, z: -1.6529385}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1232479324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1232479326}
+  - component: {fileID: 1232479325}
+  m_Layer: 0
+  m_Name: GameEndManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1232479325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232479324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7930464e3dd4b384da27d7068c19899a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteSpawner: {fileID: 305988902}
+--- !u!4 &1232479326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232479324}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.18732326, y: 0.4083116, z: 984.5852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3129,3 +3175,4 @@ SceneRoots:
   - {fileID: 1940790434}
   - {fileID: 1202239941}
   - {fileID: 1295699259}
+  - {fileID: 1232479326}
