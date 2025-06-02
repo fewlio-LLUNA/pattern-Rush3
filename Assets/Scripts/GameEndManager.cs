@@ -13,7 +13,7 @@ public class GameEndManager : MonoBehaviour
             noteSpawner = Object.FindFirstObjectByType<NoteSpawner>();
         }
     }
-public void EndGame()
+    public void EndGame()
     {
         // データ保存
         ResultData.patternName = noteSpawner.patternName;
@@ -21,6 +21,10 @@ public void EndGame()
 
         var scoreManager = ScoreManager.Instance;
 
+        // スコア計算をここで呼ぶ！
+        scoreManager.CalculateFinalScore();
+
+        // データ保存
         ResultData.score = scoreManager.GetScore();
         ResultData.perfectCount = scoreManager.GetPerfect();
         ResultData.greatCount = scoreManager.GetGreat();

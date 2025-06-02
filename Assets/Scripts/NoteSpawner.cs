@@ -9,7 +9,7 @@ public class NoteSpawner : MonoBehaviour
     public GameObject barLinePrefab;
     public Transform barLineSpawnPoint;
 
-    public string patternName = "螺旋階段";
+    public string patternName = "spiral staircase";
     public float bpm = 120f;
     public float noteSpeed = 10f;
 

@@ -47,20 +47,20 @@ public class ScoreManager : MonoBehaviour
         int totalNotes = perfectCount + greatCount + goodCount + missCount;
         if (totalNotes == 0) return;
 
-        int great = 10_000_000 / totalNotes;
-        int perfect = great + 1;
-
-        int missPenalty = Mathf.CeilToInt(10_000_000f / totalNotes);
+        int baseScore = 10_000_000;
+        int missPenalty = Mathf.CeilToInt((float)baseScore / totalNotes);
         int goodPenalty = missPenalty / 2;
 
-        int good = 10_000 - goodPenalty;
-        int miss = 0;
+        int scorePerGreat = baseScore / totalNotes;
+        int scorePerPerfect = scorePerGreat + 1;
+        int scorePerGood = scorePerGreat - goodPenalty;
+        int scorePerMiss = scorePerGreat - missPenalty;  // ‚±‚ê‚ÍŠî–{“I‚É 0 ‚É‚È‚é
 
         totalScore =
-            perfectCount * perfect +
-            greatCount * great +
-            goodCount * good +
-            missCount * miss;
+            perfectCount * scorePerPerfect +
+            greatCount * scorePerGreat +
+            goodCount * scorePerGood +
+            missCount * scorePerMiss;
     }
 
     public int GetScore() => totalScore;
