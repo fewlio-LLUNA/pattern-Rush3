@@ -7,4 +7,12 @@ public class SelectManager : MonoBehaviour
     {
         SceneManager.LoadScene("PlayScene");
     }
+    public void GoToBPMSetting()
+    {
+        SceneManager.LoadScene("BPMSettingScene");
+    }
+    public void GoToSelect()
+    {
+        SceneManager.LoadScene("BPMSettingScene");
+    }
 }
