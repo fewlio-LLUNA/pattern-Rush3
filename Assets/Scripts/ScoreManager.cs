@@ -61,6 +61,8 @@ public class ScoreManager : MonoBehaviour
             greatCount * scorePerGreat +
             goodCount * scorePerGood +
             missCount * scorePerMiss;
+
+        if (totalScore < 0) totalScore = 0;
     }
 
     public int GetScore() => totalScore;

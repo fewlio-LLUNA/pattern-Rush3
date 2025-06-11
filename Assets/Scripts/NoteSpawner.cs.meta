@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 0f22e9228fb590c48a4e075ebadde3a3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bpmData: {fileID: 11400000, guid: b9f86e306893c9440b50c6a2bacc87d7, type: 2}
+  - barLinePrefab: {instanceID: 0}
+  - barLineSpawnPoint: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
