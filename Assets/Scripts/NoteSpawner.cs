@@ -39,6 +39,12 @@ public class NoteSpawner : MonoBehaviour
         barLineInterval = 60f / bpm * 4f;    // 小節（4拍）
         endWaitTime = 60f / bpm * 4f;        // 終了待機も4拍
 
+        if (SelectedPattern.pattern != null && SelectedPattern.pattern.Length > 0)
+        {
+            pattern = SelectedPattern.pattern;
+            patternName = SelectedPattern.patternName;
+        }
+
         StartCoroutine(SpawnAll());
     }
 
