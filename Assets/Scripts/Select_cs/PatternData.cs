@@ -5,4 +5,5 @@ public class PatternData : ScriptableObject
 {
     public string patternName;
     public int[] pattern;
+    public Sprite jacketImage; 
 }

@@ -30,4 +30,8 @@ public class ResultManager : MonoBehaviour
     {
         SceneManager.LoadScene("PlayScene");
     }
+    public void OnHomeButtonPressed()
+    {
+        SceneManager.LoadScene("SelectScene");
+    }
 }

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patternName: "\u968E\u6BB5"
   pattern: 00000000010000000200000003000000
+  jacketImage: {fileID: -1867957336284525389, guid: f63851c23d895b94397cccfc05bd3afd, type: 3}

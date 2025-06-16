@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c5fce671bd0c3c4f8b93b6bb2afac89, type: 3}
   m_Name: StairGenre
   m_EditorClassIdentifier: 
-  genreName: 
-  patterns: []
+  genreName: Stair
+  patterns:
+  - {fileID: 11400000, guid: 9ca69270280703b4fb90cdad28ebc9f8, type: 2}
+  - {fileID: 11400000, guid: 53b0b07ee99f0af4a9a4ebcfeeb0348e, type: 2}

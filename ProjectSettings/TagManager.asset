@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Note
   - BarLine
+  - PatternButton
   layers:
   - Default
   - TransparentFX

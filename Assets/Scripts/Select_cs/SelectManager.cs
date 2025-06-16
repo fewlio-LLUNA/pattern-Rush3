@@ -1,16 +1,33 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro; // TextMeshPro を使っている場合
+using TMPro;
 
 public class SelectManager : MonoBehaviour
 {
-    public GenreData[] genres;  // Inspectorに登録
+    public GenreData[] genres;
     public GameObject buttonPrefab;
     public Transform buttonParent;
     public TextMeshProUGUI genreTitle;
 
     private int currentGenreIndex = 0;
+
+    public void OnLeftButton()
+    {
+        currentGenreIndex = (currentGenreIndex - 1 + genres.Length) % genres.Length;
+        ShowGenre(currentGenreIndex);
+    }
+
+    public void OnRightButton()
+    {
+        currentGenreIndex = (currentGenreIndex + 1) % genres.Length;
+        ShowGenre(currentGenreIndex);
+    }
+
+    public void OnBPMButton()
+    {
+        SceneManager.LoadScene("BPMSettingScene");
+    }
 
     void Start()
     {
@@ -19,10 +36,12 @@ public class SelectManager : MonoBehaviour
 
     public void ShowGenre(int index)
     {
-        // ボタンを全削除
         foreach (Transform child in buttonParent)
         {
-            Destroy(child.gameObject);
+            if (child.gameObject.CompareTag("PatternButton"))
+            {
+                Destroy(child.gameObject);
+            }
         }
 
         var genre = genres[index];
@@ -31,18 +50,18 @@ public class SelectManager : MonoBehaviour
         foreach (var patternData in genre.patterns)
         {
             var btn = Instantiate(buttonPrefab, buttonParent);
-            btn.GetComponentInChildren<TextMeshProUGUI>().text = patternData.patternName;
+            btn.tag = "PatternButton";
 
+            btn.GetComponentInChildren<TextMeshProUGUI>().text = patternData.patternName;
+            btn.GetComponent<Image>().sprite = patternData.jacketImage;
+
+            var data = patternData;
             btn.GetComponent<Button>().onClick.AddListener(() =>
             {
-                // 譜面データを記録してPlaySceneへ
-                SelectedPattern.pattern = patternData.pattern;
-                SelectedPattern.patternName = patternData.patternName;
+                SelectedPattern.pattern = data.pattern;
+                SelectedPattern.patternName = data.patternName;
                 SceneManager.LoadScene("PlayScene");
             });
         }
     }
-
-    public void OnLeftButton() => ShowGenre(--currentGenreIndex < 0 ? genres.Length - 1 : currentGenreIndex);
-    public void OnRightButton() => ShowGenre(++currentGenreIndex % genres.Length);
 }

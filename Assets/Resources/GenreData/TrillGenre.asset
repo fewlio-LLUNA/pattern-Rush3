@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c5fce671bd0c3c4f8b93b6bb2afac89, type: 3}
   m_Name: TrillGenre
   m_EditorClassIdentifier: 
-  genreName: 
-  patterns: []
+  genreName: Trill
+  patterns:
+  - {fileID: 11400000, guid: 94c0dbcfa373b1649b8e30fb8a1c77e1, type: 2}
