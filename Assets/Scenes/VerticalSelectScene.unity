@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1530172263}
     m_Modifications:
+    - target: {fileID: -829210600142793773, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: patternData
+      value: 
+      objectReference: {fileID: 11400000, guid: 89469e5cddc78684bb1690abea5c5153, type: 2}
     - target: {fileID: 1035384764565869002, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Name
       value: JacketButton_04
@@ -1036,6 +1040,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1530172263}
     m_Modifications:
+    - target: {fileID: -829210600142793773, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: patternData
+      value: 
+      objectReference: {fileID: 11400000, guid: d95c9a0ff84a22c489aadb2ad40cf531, type: 2}
     - target: {fileID: 1035384764565869002, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Name
       value: JacketButton_01
@@ -1455,6 +1463,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1530172263}
     m_Modifications:
+    - target: {fileID: -829210600142793773, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: patternData
+      value: 
+      objectReference: {fileID: 11400000, guid: 85e469b07853b3c47ab389245fc7ae9a, type: 2}
     - target: {fileID: 1035384764565869002, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Name
       value: JacketButton_02
@@ -1921,6 +1933,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1530172263}
     m_Modifications:
+    - target: {fileID: -829210600142793773, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: patternData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7345e3e801eed6444b7bc90ea61cfbc0, type: 2}
     - target: {fileID: 1035384764565869002, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Name
       value: JacketButton_03

@@ -4,6 +4,5 @@ using UnityEngine;
 public class PatternData : ScriptableObject
 {
     public string patternName;
-    public NoteStep[] pattern;  // 修正：NoteStep配列に変更
-    public Sprite jacketImage;
-}
+    public NoteStep[] pattern;
+}// 修正：NoteStep配列}
