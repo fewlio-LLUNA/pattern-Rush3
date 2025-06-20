@@ -692,6 +692,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6752911888624271020, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752911888624271020, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752911888624271020, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1504503884556718664, guid: 49676aa56ed2b814a906fdc91033fda5, type: 3}
+    - target: {fileID: 6752911888624271020, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752911888624271020, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752911888624271020, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneTransitionManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752911888624271020, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: PlayScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752911888624271020, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8876154253884105506, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -127.5
@@ -1562,65 +1594,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112543399}
   m_CullTransparentMesh: 1
---- !u!1 &2128750336
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2128750338}
-  - component: {fileID: 2128750337}
-  m_Layer: 0
-  m_Name: SelectManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2128750337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128750336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4939cf5734d4b454ba6d0300f1c8167b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  genres:
-  - {fileID: 11400000, guid: c8060348d819754499f5413b41b8bad7, type: 2}
-  - {fileID: 11400000, guid: fd0a28fd224984349b21960631d97c78, type: 2}
-  - {fileID: 11400000, guid: 0a8731bbcdf5532499eb7f29a46ddf57, type: 2}
-  - {fileID: 11400000, guid: 14e26f6ba86e3794f9082e9e25470e40, type: 2}
-  genreGroups:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1723195502}
-  genreTitle: {fileID: 409655691}
---- !u!4 &2128750338
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2128750336}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1257379729}
-  - {fileID: 2128750338}
   - {fileID: 167675949}

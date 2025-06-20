@@ -16,6 +16,6 @@ public class JacketButtonHandler : MonoBehaviour
     {
         SelectedPattern.pattern = patternData.pattern;
         SelectedPattern.patternName = patternData.patternName;
-        SceneManager.LoadScene("PlayScene");
+        SceneTransitionManager.Instance.LoadSceneAndSetSavePoint("PlayScene"); // Å© Ç±Ç§Ç∑ÇÈ
     }
 }

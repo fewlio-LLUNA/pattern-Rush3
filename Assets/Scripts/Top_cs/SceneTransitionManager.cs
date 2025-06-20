@@ -5,23 +5,19 @@ using UnityEngine.SceneManagement;
 // SceneTransitionManagerクラス：シーン移動を管理する記憶係の設計図
 public class SceneTransitionManager : MonoBehaviour
 {
-    // ▼▼▼ 記憶係はゲーム内に１人だけにするための魔法 ▼▼▼
     public static SceneTransitionManager Instance { get; private set; }
-
-    // ▼▼▼ 記憶係が使う「行った場所メモ帳（スタック）」▼▼▼
     private Stack<string> sceneHistory = new Stack<string>();
+
+    // ▼▼▼【追加①】セーブポイントを覚えておくための変数を追加▼▼▼
+    private string savePointScene;
 
     private void Awake()
     {
-        // --- ゲームが始まった時の記憶係の自己紹介 ---
-        // 「まだ僕みたいな記憶係がいなければ、僕がその役目をやります！」
         if (Instance == null)
         {
             Instance = this;
-            // 「そして僕は特別なので、他の部屋に行っても消えません！」
             DontDestroyOnLoad(gameObject);
         }
-        // 「あれ、もう記憶係がいるみたいだ。じゃあ僕は自己紹介だけして消えますね」
         else
         {
             Destroy(gameObject);
@@ -33,11 +29,8 @@ public class SceneTransitionManager : MonoBehaviour
     /// </summary>
     public void LoadScene(string sceneName)
     {
-        // 1. 今いる部屋の名前をメモ帳の一番上に書く
         string currentScene = SceneManager.GetActiveScene().name;
         sceneHistory.Push(currentScene);
-
-        // 2. 指定された新しい部屋にテレポート！
         SceneManager.LoadScene(sceneName);
     }
 
@@ -46,17 +39,46 @@ public class SceneTransitionManager : MonoBehaviour
     /// </summary>
     public void LoadPreviousScene()
     {
-        // 1. メモ帳に何か書いてあるかな？
         if (sceneHistory.Count > 0)
         {
-            // 2. メモ帳の一番上のページを破って、そこに書いてある部屋にテレポート！
             string previousScene = sceneHistory.Pop();
             SceneManager.LoadScene(previousScene);
         }
         else
         {
-            // メモ帳が空っぽだったら何もしない（最初の画面なので）
             Debug.LogWarning("これ以上戻る場所のメモがありませーん！");
+        }
+    }
+
+    /// <summary>
+    /// 今いる場所を「セーブポイント」として記憶してから、新しいシーンに移動する
+    /// </summary>
+    public void LoadSceneAndSetSavePoint(string sceneName)
+    {
+        // 今いるシーンの名前をセーブポイントとして記憶
+        savePointScene = SceneManager.GetActiveScene().name;
+        // 普通にシーン移動（履歴にもちゃんと残す）
+        LoadScene(sceneName);
+    }
+
+    /// <summary>
+    /// 記憶しておいた「セーブポイント」のシーンに戻る
+    /// </summary>
+    public void LoadSavePoint()
+    {
+        // セーブポイントが記録されていれば
+        if (!string.IsNullOrEmpty(savePointScene))
+        {
+            // 履歴は一旦リセットして、セーブポイントに直接飛ぶ
+            // （こうしないと、戻った先からさらに戻る時におかしくなる可能性があるため）
+            sceneHistory.Clear();
+            SceneManager.LoadScene(savePointScene);
+        }
+        else
+        {
+            Debug.LogWarning("戻るべきセーブポイントがありません。");
+            // 例えばタイトルに戻るなどの処理を入れても良い
+            // LoadScene("TopScene");
         }
     }
 }

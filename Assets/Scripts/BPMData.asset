@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b370b2f407927404aa3b772bc3502652, type: 3}
   m_Name: BPMData
   m_EditorClassIdentifier: 
-  bpm: 120
+  bpm: 160

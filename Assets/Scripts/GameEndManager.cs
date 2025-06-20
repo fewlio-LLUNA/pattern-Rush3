@@ -33,6 +33,7 @@ public class GameEndManager : MonoBehaviour
         ResultData.maxCombo = scoreManager.GetMaxCombo();
 
         // Œ‹‰Ê‰æ–Ê‚Ö
-        SceneManager.LoadScene("ResultScene");
+        //SceneManager.LoadScene("ResultScene");
+        SceneTransitionManager.Instance.LoadScene("ResultScene");
     }
 }

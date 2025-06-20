@@ -28,10 +28,11 @@ public class ResultManager : MonoBehaviour
 
     public void OnRetryButtonPressed()
     {
-        SceneManager.LoadScene("PlayScene");
+        // SceneManager.LoadScene("PlayScene"); // Å© Ç±ÇÍÇèCê≥
+        SceneTransitionManager.Instance.LoadScene("PlayScene"); // Å© Ç±Ç§Ç∑ÇÈ
     }
     public void OnHomeButtonPressed()
     {
-        SceneManager.LoadScene("SelectScene");
+        SceneTransitionManager.Instance.LoadSavePoint();
     }
 }
