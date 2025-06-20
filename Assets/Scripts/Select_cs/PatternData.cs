@@ -4,6 +4,6 @@ using UnityEngine;
 public class PatternData : ScriptableObject
 {
     public string patternName;
-    public int[] pattern;
-    public Sprite jacketImage; 
+    public NoteStep[] pattern;  // C³FNoteStep”z—ñ‚É•ÏX
+    public Sprite jacketImage;
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class NoteSpawner : MonoBehaviour
 {
     [Header("BPM設定（ScriptableObject）")]
-    public BPMData bpmData; // Inspector で BPMData.asset をアタッチ
+    public BPMData bpmData;
 
     [Header("ノーツ設定")]
     public GameObject[] notePrefabs;
@@ -18,12 +18,12 @@ public class NoteSpawner : MonoBehaviour
     public string patternName = "spiral staircase";
     public float noteSpeed = 10f;
 
-    public float bpm;               // ScriptableObjectから取得する
-    private float noteInterval;     // 16分音符間隔（秒）
-    private float barLineInterval;  // 小節間隔（秒）
-    private float endWaitTime;      // 最後に待機する時間（秒）
+    public float bpm;
+    private float noteInterval;
+    private float barLineInterval;
+    private float endWaitTime;
 
-    private int[] pattern = { 0, 1, 2, 3, 2, 1 }; // 折り返し階段パターン
+    private NoteStep[] pattern;  // 変更点①：NoteStep配列に変更
 
     private bool allNotesSpawned = false;
     private bool gameEnded = false;
@@ -31,18 +31,22 @@ public class NoteSpawner : MonoBehaviour
 
     void Start()
     {
-        // BPM を ScriptableObject から取得
         bpm = bpmData.bpm;
 
-        // BPM に基づく時間間隔計算
-        noteInterval = 60f / bpm / 4f;       // 16分音符
-        barLineInterval = 60f / bpm * 4f;    // 小節（4拍）
-        endWaitTime = 60f / bpm * 4f;        // 終了待機も4拍
+        noteInterval = 60f / bpm / 4f;
+        barLineInterval = 60f / bpm * 4f;
+        endWaitTime = 60f / bpm * 4f;
 
+        // 変更点②：pattern取得とnullチェック
         if (SelectedPattern.pattern != null && SelectedPattern.pattern.Length > 0)
         {
             pattern = SelectedPattern.pattern;
             patternName = SelectedPattern.patternName;
+        }
+        else
+        {
+            Debug.LogError("SelectedPattern.pattern が設定されていません！");
+            pattern = new NoteStep[0]; // 空配列で回避
         }
 
         StartCoroutine(SpawnAll());
@@ -50,7 +54,6 @@ public class NoteSpawner : MonoBehaviour
 
     IEnumerator SpawnAll()
     {
-        // 初期の2秒は無音
         yield return new WaitForSeconds(2f);
 
         int index = 0;
@@ -58,22 +61,31 @@ public class NoteSpawner : MonoBehaviour
         float totalDuration = 30f;
         int beatCount = 0;
 
-        while (elapsed < totalDuration)
+        while (elapsed < totalDuration && pattern.Length > 0)
         {
-            // パターンに従ってノーツ生成
-            int lane = pattern[index % pattern.Length];
-            GameObject note = Instantiate(notePrefabs[lane], spawnPoints[lane].position, Quaternion.identity);
-            note.tag = "Note";
-
-            // ノーツの移動設定
-            var mover = note.GetComponent<NoteMover>();
-            if (mover != null)
+            // 変更点③：複数レーン対応
+            NoteStep currentStep = pattern[index % pattern.Length];
+            foreach (int lane in currentStep.lanes)
             {
-                mover.speed = noteSpeed;
-                mover.laneIndex = lane;
+                if (lane >= 0 && lane < notePrefabs.Length)
+                {
+                    GameObject note = Instantiate(notePrefabs[lane], spawnPoints[lane].position, Quaternion.identity);
+                    note.tag = "Note";
+
+                    var mover = note.GetComponent<NoteMover>();
+                    if (mover != null)
+                    {
+                        mover.speed = noteSpeed;
+                        mover.laneIndex = lane;
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning($"レーン {lane} は存在しません。");
+                }
             }
 
-            // 小節線を定期的に生成（16拍ごと＝4小節）
+            // 小節線（16ステップごと）
             if (beatCount % 16 == 0)
             {
                 GameObject barLine = Instantiate(barLinePrefab, barLineSpawnPoint.position, Quaternion.identity);
@@ -90,13 +102,11 @@ public class NoteSpawner : MonoBehaviour
             yield return new WaitForSeconds(noteInterval);
         }
 
-        // 全ノーツ生成完了フラグ
         allNotesSpawned = true;
     }
 
     void Update()
     {
-        // 全ノーツ生成後、すべてのノーツが消えるのを待ってリザルトへ
         if (allNotesSpawned && !gameEnded)
         {
             if (GameObject.FindGameObjectsWithTag("Note").Length == 0)
@@ -109,10 +119,6 @@ public class NoteSpawner : MonoBehaviour
                     if (gameEndManager != null)
                     {
                         gameEndManager.EndGame();
-                    }
-                    else
-                    {
-                        Debug.LogWarning("GameEndManager が見つかりません！");
                     }
                 }
             }
