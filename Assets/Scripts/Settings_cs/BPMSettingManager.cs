@@ -79,10 +79,10 @@ public class BPMSettingManager : MonoBehaviour
         }
     }
 
-    public void OnBackButtonPressed()
-    {
-        SceneManager.LoadScene("SelectScene");
-    }
+    //public void OnBackButtonPressed()
+    //{
+    //    SceneManager.LoadScene("SelectScene");
+    //}
 
     private bool TryParseValidBPM(string input, out float bpm)
     {

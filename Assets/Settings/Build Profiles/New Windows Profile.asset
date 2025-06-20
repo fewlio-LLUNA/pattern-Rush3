@@ -27,7 +27,15 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/BPMSettingScene.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/SelectScene.unity
+    m_path: Assets/Scenes/OtherSelectScene.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/StairSelectScene.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/VerticalSelectScene.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/TrillSelectScene.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/TopScene.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
