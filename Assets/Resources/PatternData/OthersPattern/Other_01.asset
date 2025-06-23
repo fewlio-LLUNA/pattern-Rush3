@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b370b2f407927404aa3b772bc3502652, type: 3}
-  m_Name: BPMData
+  m_Script: {fileID: 11500000, guid: be9a89f635379bc46991ddcf60c52566, type: 3}
+  m_Name: Other_01
   m_EditorClassIdentifier: 
-  bpm: 120
+  patternName: "\u5927\u5B87\u5B99"
+  pattern:
+  - lanes: 03000000
+  - lanes: 00000000
+  - lanes: 02000000
+  - lanes: 01000000

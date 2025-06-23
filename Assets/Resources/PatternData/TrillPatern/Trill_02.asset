@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be9a89f635379bc46991ddcf60c52566, type: 3}
-  m_Name: Trill_1_2
+  m_Name: Trill_02
   m_EditorClassIdentifier: 
-  patternName: "\u30C8\u30EA\u30EB"
-  pattern: 0100000002000000
-  jacketImage: {fileID: -7690541472150691956, guid: b8723fd23a800144190fedd7cce40d87, type: 3}
+  patternName: "\u30B5\u30A4\u30C9\u62D8\u675F"
+  pattern: []

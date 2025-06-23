@@ -329,6 +329,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1628992510}
     m_Modifications:
+    - target: {fileID: -829210600142793773, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: patternData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a9061604986af64589989fd0d5f2a16, type: 2}
     - target: {fileID: 1035384764565869002, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Name
       value: JacketButton_03
@@ -340,6 +344,18 @@ PrefabInstance:
     - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_text
       value: "\u7247\u624B\u30C8\u30EA\u30EB"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 830edb8453bdb4e4eb962c2f7fd25d4b, type: 2}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 637577185586791859, guid: 830edb8453bdb4e4eb962c2f7fd25d4b, type: 2}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Pivot.x
@@ -383,7 +399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.000125
+      value: 0.00012481213
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalRotation.w
@@ -403,11 +419,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 20.199987
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 98.99999
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -747,7 +763,7 @@ PrefabInstance:
     - target: {fileID: -829210600142793773, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: patternData
       value: 
-      objectReference: {fileID: 11400000, guid: 94c0dbcfa373b1649b8e30fb8a1c77e1, type: 2}
+      objectReference: {fileID: 11400000, guid: 63b214c7e72559e47a078d1ee6f0340c, type: 2}
     - target: {fileID: 1035384764565869002, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Name
       value: JacketButton_01
@@ -759,6 +775,18 @@ PrefabInstance:
     - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_text
       value: "\u30C8\u30EA\u30EB"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 830edb8453bdb4e4eb962c2f7fd25d4b, type: 2}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 637577185586791859, guid: 830edb8453bdb4e4eb962c2f7fd25d4b, type: 2}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Pivot.x
@@ -802,7 +830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.000125
+      value: 0.00012481213
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalRotation.w
@@ -822,11 +850,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -439.80002
+      value: -459.99997
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 98.99999
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -894,6 +922,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1628992510}
     m_Modifications:
+    - target: {fileID: -829210600142793773, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: patternData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1834b8b67580c2a46a6044b6fa59d078, type: 2}
     - target: {fileID: 1035384764565869002, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Name
       value: JacketButton_04
@@ -905,6 +937,18 @@ PrefabInstance:
     - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_text
       value: "\u4E21\u624B\u5BFE\u79F0"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 830edb8453bdb4e4eb962c2f7fd25d4b, type: 2}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 637577185586791859, guid: 830edb8453bdb4e4eb962c2f7fd25d4b, type: 2}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Pivot.x
@@ -948,7 +992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.000125
+      value: 0.00012481213
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalRotation.w
@@ -968,11 +1012,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250.19998
+      value: 229.99998
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 98.99999
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1040,6 +1084,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1628992510}
     m_Modifications:
+    - target: {fileID: -829210600142793773, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: patternData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7f32b1d93e33ace4d87a3efd1a23e061, type: 2}
     - target: {fileID: 1035384764565869002, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Name
       value: JacketButton_05
@@ -1051,6 +1099,18 @@ PrefabInstance:
     - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_text
       value: "\u4E21\u624B\u975E\u5BFE\u79F0"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 830edb8453bdb4e4eb962c2f7fd25d4b, type: 2}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 637577185586791859, guid: 830edb8453bdb4e4eb962c2f7fd25d4b, type: 2}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Pivot.x
@@ -1094,7 +1154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.000125
+      value: 0.00012481213
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1114,11 +1174,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 480.19998
+      value: 460
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 98.99999
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1487,7 +1547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 146.25507, y: -627.88}
+  m_AnchoredPosition: {x: 200, y: -604.05}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547003230
@@ -1777,6 +1837,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1628992510}
     m_Modifications:
+    - target: {fileID: -829210600142793773, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: patternData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e7439fc5df74cf4cb269e476b0979d1, type: 2}
     - target: {fileID: 1035384764565869002, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Name
       value: JacketButton_02
@@ -1788,6 +1852,18 @@ PrefabInstance:
     - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_text
       value: "\u30B5\u30A4\u30C9\u62D8\u675F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 830edb8453bdb4e4eb962c2f7fd25d4b, type: 2}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 637577185586791859, guid: 830edb8453bdb4e4eb962c2f7fd25d4b, type: 2}
+    - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Pivot.x
@@ -1831,7 +1907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.000125
+      value: 0.00012481213
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1851,11 +1927,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -209.8
+      value: -230
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 98.99999
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 6421593170236492253, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2095,7 +2171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1773.755, y: -604.05}
+  m_AnchoredPosition: {x: 1780, y: -604.05}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2112543401

@@ -1,4 +1,3 @@
-// JacketButtonHandler.cs Ç…èCê≥
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +15,6 @@ public class JacketButtonHandler : MonoBehaviour
     {
         SelectedPattern.pattern = patternData.pattern;
         SelectedPattern.patternName = patternData.patternName;
-        SceneTransitionManager.Instance.LoadSceneAndSetSavePoint("PlayScene"); // Å© Ç±Ç§Ç∑ÇÈ
+        SceneTransitionManager.Instance.LoadSceneAndSetSavePoint("PlayScene"); 
     }
 }

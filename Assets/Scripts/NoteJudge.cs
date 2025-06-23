@@ -5,8 +5,8 @@ public class NoteJudge : MonoBehaviour
     public Transform judgeLine;
     public KeyCode[] keys = { KeyCode.A, KeyCode.D, KeyCode.J, KeyCode.L };
 
-    // 判定閾値（秒）: Perfect, Great, Good, Miss
-    private readonly float[] judgeThresholds = { 0.02083f, 0.04167f, 0.08333f, 0.10416f };
+    // Perfect, Great, Good, Miss
+    private readonly float[] judgeThresholds = { 0.02083f, 0.04167f, 0.06249f, 0.08332f };
 
     public UIManager uiManager;
     public ScoreManager scoreManager;
@@ -32,7 +32,7 @@ public class NoteJudge : MonoBehaviour
         foreach (GameObject note in notes)
         {
             NoteMover mover = note.GetComponent<NoteMover>();
-            if (mover.laneIndex != laneIndex || mover.wasJudged) continue; // 既に判定済ならスキップ
+            if (mover.laneIndex != laneIndex || mover.wasJudged) continue; 
 
             noteExistsInLane = true;
 
@@ -62,7 +62,6 @@ public class NoteJudge : MonoBehaviour
 
             Destroy(bestCandidate);
 
-            // 先にスコアカウントを更新する
             scoreManager.AddJudgement(result);
             uiManager.DisplayJudgement(result);
         }
@@ -78,7 +77,7 @@ public class NoteJudge : MonoBehaviour
 
                     if (timeDiff >= judgeThresholds[3])
                     {
-                        mover.wasJudged = true; // ← Miss判定であっても「判定済み」にすることが重要
+                        mover.wasJudged = true; 
                         scoreManager.AddJudgement("Miss");
                         uiManager.DisplayJudgement("Miss");
                         Destroy(note);
