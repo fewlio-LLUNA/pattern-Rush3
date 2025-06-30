@@ -34,26 +34,27 @@ public class NoteSpawner : MonoBehaviour
 
     void Start()
     {
-        // BPM と ノーツ速度倍率の取得
-        bpm = bpmData.bpm;
-
-        // ★ ノーツ速度をユーザー設定の倍率で計算（2.0 → 10f）
-        if (noteSpeedData != null)
+        // 1. BPMの再読み込み（PlayerPrefsが存在すれば）
+        if (PlayerPrefs.HasKey("BPM"))
         {
-            noteSpeed = noteSpeedData.noteSpeedMultiplier * 5f;
+            bpm = PlayerPrefs.GetFloat("BPM");
+            bpmData.bpm = bpm; // ScriptableObjectにも反映しておくとよい
         }
         else
         {
-            Debug.LogWarning("NoteSpeedData が設定されていません。デフォルト速度10fを使用します。");
-            noteSpeed = 10f;
+            bpm = bpmData.bpm; // fallback
         }
 
-        // 間隔などの計算
+        // 2. ノーツスピードの再読み込み
+        if (PlayerPrefs.HasKey("NoteSpeed"))
+        {
+            noteSpeed = PlayerPrefs.GetFloat("NoteSpeed") * 5f; // 表示値×5で実際の速度
+        }
+
         noteInterval = 60f / bpm / 4f;
         barLineInterval = 60f / bpm * 4f;
         endWaitTime = 60f / bpm * 4f;
 
-        // パターンの取得
         if (SelectedPattern.pattern != null && SelectedPattern.pattern.Length > 0)
         {
             pattern = SelectedPattern.pattern;
@@ -67,6 +68,7 @@ public class NoteSpawner : MonoBehaviour
 
         StartCoroutine(SpawnAll());
     }
+
 
     IEnumerator SpawnAll()
     {
