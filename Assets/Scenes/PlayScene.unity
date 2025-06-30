@@ -372,6 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bpmData: {fileID: 11400000, guid: b9f86e306893c9440b50c6a2bacc87d7, type: 2}
+  noteSpeedData: {fileID: 11400000, guid: b3756332e8f55db4e83ad7d9cea42c53, type: 2}
   notePrefabs:
   - {fileID: 4250128936201626581, guid: ec42e32ed6ea84f43a56a506a6d56575, type: 3}
   - {fileID: 7120136984785633470, guid: f2d09f4679762434b93fd2252aff1af5, type: 3}

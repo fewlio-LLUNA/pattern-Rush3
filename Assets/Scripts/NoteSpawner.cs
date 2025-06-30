@@ -6,6 +6,9 @@ public class NoteSpawner : MonoBehaviour
     [Header("BPM設定（ScriptableObject）")]
     public BPMData bpmData;
 
+    [Header("ノーツ速度設定（ScriptableObject）")]
+    public NoteSpeedData noteSpeedData;  // ← 新たに追加
+
     [Header("ノーツ設定")]
     public GameObject[] notePrefabs;
     public Transform[] spawnPoints;
@@ -16,14 +19,14 @@ public class NoteSpawner : MonoBehaviour
 
     [Header("その他設定")]
     public string patternName = "spiral staircase";
-    public float noteSpeed = 10f;
+    public float noteSpeed = 10f;  // ← 実行時に計算で上書き
 
     public float bpm;
     private float noteInterval;
     private float barLineInterval;
     private float endWaitTime;
 
-    private NoteStep[] pattern;  // 変更点①：NoteStep配列に変更
+    private NoteStep[] pattern;
 
     private bool allNotesSpawned = false;
     private bool gameEnded = false;
@@ -31,13 +34,26 @@ public class NoteSpawner : MonoBehaviour
 
     void Start()
     {
+        // BPM と ノーツ速度倍率の取得
         bpm = bpmData.bpm;
 
+        // ★ ノーツ速度をユーザー設定の倍率で計算（2.0 → 10f）
+        if (noteSpeedData != null)
+        {
+            noteSpeed = noteSpeedData.noteSpeedMultiplier * 5f;
+        }
+        else
+        {
+            Debug.LogWarning("NoteSpeedData が設定されていません。デフォルト速度10fを使用します。");
+            noteSpeed = 10f;
+        }
+
+        // 間隔などの計算
         noteInterval = 60f / bpm / 4f;
         barLineInterval = 60f / bpm * 4f;
         endWaitTime = 60f / bpm * 4f;
 
-        // 変更点②：pattern取得とnullチェック
+        // パターンの取得
         if (SelectedPattern.pattern != null && SelectedPattern.pattern.Length > 0)
         {
             pattern = SelectedPattern.pattern;
@@ -46,7 +62,7 @@ public class NoteSpawner : MonoBehaviour
         else
         {
             Debug.LogError("SelectedPattern.pattern が設定されていません！");
-            pattern = new NoteStep[0]; // 空配列で回避
+            pattern = new NoteStep[0];
         }
 
         StartCoroutine(SpawnAll());
@@ -63,7 +79,6 @@ public class NoteSpawner : MonoBehaviour
 
         while (elapsed < totalDuration && pattern.Length > 0)
         {
-            // 変更点③：複数レーン対応
             NoteStep currentStep = pattern[index % pattern.Length];
             foreach (int lane in currentStep.lanes)
             {

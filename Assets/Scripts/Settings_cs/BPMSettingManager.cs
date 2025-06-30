@@ -4,6 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class BPMSettingManager : MonoBehaviour
 {
+    // 追加①：冒頭に追記
+    [Header("ノーツ速度データ（ScriptableObject）")]
+    public NoteSpeedData noteSpeedData;
+
+    [Header("ノーツ速度表示UI")]
+    public TMP_Text speedDisplayText;
+    public float speedStep = 0.1f;
+
     [Header("BPMデータ（ScriptableObject）")]
     public BPMData bpmData; // InspectorでBPMDataアセットを設定
 
@@ -27,6 +35,13 @@ public class BPMSettingManager : MonoBehaviour
 
         bpmInputField.text = bpmData.bpm.ToString("F1");
         warningText.text = "";
+
+        if (PlayerPrefs.HasKey("NoteSpeed"))
+        {
+            noteSpeedData.noteSpeedMultiplier = PlayerPrefs.GetFloat("NoteSpeed");
+        }
+
+        UpdateSpeedDisplay();
     }
 
     public void OnSaveBPMButtonPressed()
@@ -93,5 +108,41 @@ public class BPMSettingManager : MonoBehaviour
         }
         bpm = 0;
         return false;
+    }
+
+    public void OnSpeedPlusButtonPressed()
+    {
+        if (noteSpeedData.noteSpeedMultiplier < 6.0f)
+        {
+            noteSpeedData.noteSpeedMultiplier += speedStep;
+            noteSpeedData.noteSpeedMultiplier = Mathf.Min(6.0f, noteSpeedData.noteSpeedMultiplier);
+            SaveNoteSpeed();
+        }
+    }
+
+    public void OnSpeedMinusButtonPressed()
+    {
+        if (noteSpeedData.noteSpeedMultiplier > 0.1f)
+        {
+            noteSpeedData.noteSpeedMultiplier -= speedStep;
+            noteSpeedData.noteSpeedMultiplier = Mathf.Max(0.1f, noteSpeedData.noteSpeedMultiplier);
+            SaveNoteSpeed();
+        }
+    }
+
+    private void SaveNoteSpeed()
+    {
+        PlayerPrefs.SetFloat("NoteSpeed", noteSpeedData.noteSpeedMultiplier);
+        PlayerPrefs.Save();
+        UpdateSpeedDisplay();
+        warningText.text = $"ノーツ速度を保存しました（{noteSpeedData.noteSpeedMultiplier:F1}）";
+    }
+
+    private void UpdateSpeedDisplay()
+    {
+        if (speedDisplayText != null)
+        {
+            speedDisplayText.text = $"{noteSpeedData.noteSpeedMultiplier:F1}";
+        }
     }
 }
