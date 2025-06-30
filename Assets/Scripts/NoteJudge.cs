@@ -6,7 +6,7 @@ public class NoteJudge : MonoBehaviour
     public KeyCode[] keys = { KeyCode.A, KeyCode.D, KeyCode.J, KeyCode.L };
 
     // Perfect, Great, Good, Miss
-    private readonly float[] judgeThresholds = { 0.02083f, 0.04167f, 0.06249f, 0.08332f };
+    private readonly float[] judgeThresholds = { 0.03333f, 0.04167f, 0.05208f, 0.08332f };
 
     public UIManager uiManager;
     public ScoreManager scoreManager;
