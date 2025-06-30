@@ -771,8 +771,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PetternTitle
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 830edb8453bdb4e4eb962c2f7fd25d4b, type: 2}
-  m_sharedMaterial: {fileID: 637577185586791859, guid: 830edb8453bdb4e4eb962c2f7fd25d4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd510696a549c764fba71d4fafdf188c, type: 2}
+  m_sharedMaterial: {fileID: 7057773312776592588, guid: bd510696a549c764fba71d4fafdf188c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
