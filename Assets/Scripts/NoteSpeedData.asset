@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cae13dbc0a8a7b4d9f55a8d6f1f6b9d, type: 3}
   m_Name: NoteSpeedData
   m_EditorClassIdentifier: 
-  noteSpeedMultiplier: 2
+  noteSpeedMultiplier: 2.7000031
