@@ -397,6 +397,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1530172263}
     m_Modifications:
+    - target: {fileID: -829210600142793773, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: patternData
+      value: 
+      objectReference: {fileID: 11400000, guid: 49bae2cdffab2244ba4a2ed3cc59b13c, type: 2}
     - target: {fileID: 1035384764565869002, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Name
       value: JacketButton_07
@@ -770,6 +774,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1530172263}
     m_Modifications:
+    - target: {fileID: -829210600142793773, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: patternData
+      value: 
+      objectReference: {fileID: 11400000, guid: c4e54abba18d2b24abdff486519c5ab1, type: 2}
     - target: {fileID: 1035384764565869002, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Name
       value: JacketButton_06
@@ -777,7 +785,7 @@ PrefabInstance:
     - target: {fileID: 3651516557434034506, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3955942674849364877, guid: 9151666dcc2c2154e85b4fb4cce524ce, type: 3}
+      objectReference: {fileID: -2957378934843135250, guid: da2cb09180a653049b9ab018ef4b0eff, type: 3}
     - target: {fileID: 5382652179377611620, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_text
       value: "\u56DB\u9023\u5FAE\u7E26\u9023"
@@ -1870,7 +1878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 130.00002, y: -1063.2999}
+  m_AnchoredPosition: {x: 130, y: -1063.2999}
   m_SizeDelta: {x: 260, y: 100.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1624336415
@@ -2409,6 +2417,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1530172263}
     m_Modifications:
+    - target: {fileID: -829210600142793773, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
+      propertyPath: patternData
+      value: 
+      objectReference: {fileID: 11400000, guid: 74c7c5b5f5fc6a045950da7ab95df483, type: 2}
     - target: {fileID: 1035384764565869002, guid: 6b2a54d720b32374285e096bac1c55da, type: 3}
       propertyPath: m_Name
       value: JacketButton_05
