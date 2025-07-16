@@ -28,15 +28,19 @@ public class UIManager : MonoBehaviour
         {
             case "Perfect":
                 perfectText.text = ScoreManager.Instance.GetPerfect().ToString();
+                judgementText.color = new Color32(255, 210, 98, 255); 
                 break;
             case "Great":
                 greatText.text = ScoreManager.Instance.GetGreat().ToString();
+                judgementText.color = new Color32(255, 142, 97, 255); 
                 break;
             case "Good":
                 goodText.text = ScoreManager.Instance.GetGood().ToString();
+                judgementText.color = new Color32(98, 187, 217, 255); 
                 break;
             case "Miss":
                 missText.text = ScoreManager.Instance.GetMiss().ToString();
+                judgementText.color = new Color32(165, 165, 165, 255);
                 break;
         }
 
