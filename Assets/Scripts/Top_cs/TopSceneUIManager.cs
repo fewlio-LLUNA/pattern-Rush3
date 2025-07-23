@@ -5,6 +5,7 @@ public class TopSceneUIManager : MonoBehaviour
     // スタートボタンから呼び出す：StairSelectSceneへ遷移
     public void OnStartButton()
     {
+        SoundManager.Instance.PlaySe(SeType.Start);
         SceneTransitionManager.Instance.LoadScene("StairSelectScene");
     }
 
